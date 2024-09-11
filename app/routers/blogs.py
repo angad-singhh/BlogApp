@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from ..models.blog import Blog, UpdateBlog
 import datetime
 from bson import ObjectId
-from ..config.config import blogs_collection
+from ..config.db_config import blogs_collection
 from ..serializer.blog import decodeBlog, decodeBlogs
 
 router = APIRouter()
