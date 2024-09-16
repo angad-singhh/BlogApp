@@ -4,7 +4,7 @@ import datetime
 from ..config.db_config import comment_collection
 from ..serializer.comments import decode_comments
 
-router = APIRouter(prefix="/comment")
+router = APIRouter(prefix="/comment", tags=["Comments"])
 
 
 @router.get("/all/{blog_id}")

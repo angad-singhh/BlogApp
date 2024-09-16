@@ -16,6 +16,7 @@ db = client.blogsDB
 blogs_collection = db["blogs"]
 comment_collection = db["comments"]
 likes_collection = db["likes"]
+user_collection = db["users"]
 
 # Send a ping to confirm a successful connection
 try:

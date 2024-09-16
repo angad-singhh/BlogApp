@@ -1,16 +1,11 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from ..models.blog import Blog, UpdateBlog
 import datetime
 from bson import ObjectId
 from ..config.db_config import blogs_collection
 from ..serializer.blog import decode_blog, decode_blogs
 
-router = APIRouter(prefix="/blogs")
-
-
-@router.get("/")
-def root():
-    return {"Status": "OK", "Message": "Welcome to blogs API"}
+router = APIRouter(prefix="/blogs", tags=["Blogs"])
 
 
 @router.post("/create")
@@ -26,6 +21,8 @@ def create_blog(blog: Blog):
 @router.get("/all")
 def get_all_blogs():
     docs = blogs_collection.find()
+    if docs is None:
+        raise HTTPException(status_code=404, detail="No blogs found")
     decoded_data = decode_blogs(docs)
     return {"Status": "Success", "Blogs": decoded_data}
 
