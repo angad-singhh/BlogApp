@@ -5,3 +5,4 @@ app/models/__pycache__/
 app/routers/__pycache__/
 app/serializer/__pycache__/
 app/config/__pycache__/
+.env

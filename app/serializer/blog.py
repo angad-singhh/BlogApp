@@ -1,4 +1,4 @@
-def decodeBlog(doc) -> dict:
+def decode_blog(doc) -> dict:
     return {
         "_id": str(doc["_id"]),
         "title": doc["title"],
@@ -10,5 +10,5 @@ def decodeBlog(doc) -> dict:
     }
 
 
-def decodeBlogs(docs) -> list:
-    return [decodeBlog(doc) for doc in docs]
+def decode_blogs(docs) -> list:
+    return [decode_blog(doc) for doc in docs]
