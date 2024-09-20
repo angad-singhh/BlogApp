@@ -1,4 +1,4 @@
-# REST full API for Blog APP
+# RESTful API for Blog APP
 This project allows you to perform CRUD operation on Blog, add comment to a blog, like and dislike the blog with User registration. The API made using Python-FastAPI, MongoDB as database.
 
 ## High level ER Diagram
